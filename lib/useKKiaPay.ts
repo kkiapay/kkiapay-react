@@ -1,4 +1,4 @@
-import { ILibrary } from "@kkiapay-org/js-sdk";
+import { ILibrary } from "kkiapay";
 import { useEffect, useState } from "react";
 
 const defaultModules: ILibrary = {
@@ -24,7 +24,7 @@ export function useKKiaPay() {
 
   useEffect(() => {
     const loadModule = async () => {
-      const imported = await import("@kkiapay-org/js-sdk");
+      const imported = await import("kkiapay");
       const lib = (imported as any).default ?? imported;
       setModules(lib as ILibrary);
     };

@@ -1,6 +1,6 @@
 {
   "name": "kkiapay-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "files": [
     "dist"
@@ -15,7 +15,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@kkiapay-org/js-sdk": "^0.0.3"
+    "kkiapay": "^2.0.36"
   },
   "peerDependencies": {
     "react": "^18.2.0",
