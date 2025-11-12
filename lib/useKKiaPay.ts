@@ -1,5 +1,5 @@
-import { ILibrary } from 'kkiapay/dist/src/typings';
-import { useEffect, useState } from 'react';
+import { ILibrary } from "@kkiapay-org/js-sdk";
+import { useEffect, useState } from "react";
 
 const defaultModules: ILibrary = {
   openKkiapayWidget: () => {},
@@ -24,11 +24,11 @@ export function useKKiaPay() {
 
   useEffect(() => {
     const loadModule = async () => {
-      const _modules = await import('kkiapay');
-      setModules(_modules);
+      const imported = await import("@kkiapay-org/js-sdk");
+      const lib = (imported as any).default ?? imported;
+      setModules(lib as ILibrary);
     };
     loadModule();
   }, []);
-
   return modules;
 }
