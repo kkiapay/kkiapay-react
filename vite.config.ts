@@ -11,9 +11,10 @@ export default defineConfig({
       entry: resolve(__dirname, 'lib/main.ts'),
       formats: ['es'],
     },
+    sourcemap: true,
     copyPublicDir: false,
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime'],
+      external: ['react', 'react/jsx-runtime', 'kkiapay'],
     },
   },
 });
